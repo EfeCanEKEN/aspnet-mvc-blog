@@ -8,7 +8,5 @@ namespace App.Web.Mvc.Controllers.Admin
         {
             return View();
         }
-
-       
     }
 }
