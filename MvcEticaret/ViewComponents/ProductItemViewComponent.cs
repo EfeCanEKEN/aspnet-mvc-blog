@@ -1,19 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MvcEticaret.Models;
 
 namespace MvcEticaret.ViewComponents
 {
     public class ProductItemViewComponent : ViewComponent
     {
-        public IViewComponentResult Invoke(string title, int startCount, decimal oldPrice, decimal price, string imageUrl, bool isSale)
+        public IViewComponentResult Invoke(string title, int starCount, decimal oldPrice, decimal price, string imageUrl, bool isSale)
         {
-            ViewData["Title"] = title;
-            ViewData["StartCount"] = startCount;
-            ViewData["OldPrice"] = oldPrice;
-            ViewData["Price"] = price;
-            ViewData["ImageUrl"] = imageUrl;
-            ViewData["IsSale"] = isSale;
+            var product = new Product()
+            {
+                Title = title,
+                Price = price,
+                ImageUrl = imageUrl,
+                IsSale = isSale,
+                OldPrice = oldPrice,
+                StarCount = starCount
+            };
 
-            return View();
+            return View(product);
         }
     }
 }
