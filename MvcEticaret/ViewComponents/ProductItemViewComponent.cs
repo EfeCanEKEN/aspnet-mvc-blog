@@ -10,7 +10,7 @@ namespace MvcEticaret.ViewComponents
             var product = new ProductItemViewModel()
             {
                 Title = title,
-                Price = price,  
+                Price = price,
                 ImageUrl = imageUrl,
                 IsSale = isSale,
                 OldPrice = oldPrice,
